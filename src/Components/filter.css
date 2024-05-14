@@ -7,7 +7,7 @@
     src: url('./COPRGTL.TTF') format('truetype'); /* Specify the path to your font file */
   }
   body{
-    background-image: linear-gradient(to left, #bccbde, #c2dde6, #e6e9f0);
+    /* background-image: linear-gradient(to left, #bccbde, #c2dde6, #e6e9f0); */
   }
   .container
   {
