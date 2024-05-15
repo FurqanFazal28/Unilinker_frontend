@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Header from "../Landing Page/Header";
 
 function List() {
   const [universitiesData, setUniversitiesData] = useState([]);
@@ -126,6 +127,8 @@ function List() {
   };
 
   return (
+    <>
+    <Header></Header>
     <div className="w-full max-w-[1920px] mx-auto">
       <div className="p-4 border rounded-lg shadow-lg m-10">
         <div className="m-2 flex flex-col">
@@ -234,6 +237,7 @@ function List() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -6,8 +6,10 @@ function Header() {
         <div class="px-[24px] bg-[#EDF1FF] max-w-[1440px] mx-auto flex justify-between h-[48px] items-center">
           <div class="flex justify-center items-center gap-2">
             <img src="../../../assets/images/svg/Icon.svg" alt="" />
-            <h2 class="text-[#061C3D] text-xl  font-bold">
-              Propozycja Dla Moxxy
+            <h2  class="text-[#061C3D] text-xl  font-bold">
+              <Link to="/">
+            UniLinker
+            </Link>
             </h2>
           </div>
 
@@ -22,7 +24,11 @@ function Header() {
               <div class="flex gap-2 justify-center items-center">
                 <img src="./images/svg/monitor.svg" alt="" />
                 <h2 class="text-[#444750] text-sm font-normal font-Poppins">
+<<<<<<< HEAD
                 <Link to="/question">Test Practice</Link>
+=======
+                 <Link to="/Question">Test Practice</Link> 
+>>>>>>> 1d506eb4011a7c91603ed396c131ab5578d7a3be
                 </h2>
               </div>
               <div class="flex gap-2 justify-center items-center">

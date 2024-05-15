@@ -14,35 +14,21 @@ function TestPractice() {
           <div className="flex flex-col gap-[51px]">
             <div className="flex flex-col gap-1">
               <h2 className="font-poppins text-2xl font-semibold">
-                Explore and Hone Your Text Editing Skills
+              Improve your University Admission Chances!
               </h2>
               <p className="text-[#000] text-sm">
-                Welcome to our text practice section! Here, you can explore the
-                various features and capabilities of our platform. Whether
-                you're looking to enhance your typing skills, improve your
-                formatting techniques, or simply get familiar with the layout,
-                this is the perfect place to do so. Feel free to experiment with
-                different text styles, sizes, and alignments. Practice makes
-                perfect, so dive in and start honing your text editing abilities
-                today!
+              Welcome to our comprehensive test preparation platform! Tailored to your needs, our diverse array of sections cater to every category and subject you require. Whether you're gearing up for standardized exams, admissions, or academic assessments, we've got you covered. Choose your desired category or subject, and embark on a journey towards mastery and success."
+
               </p>
             </div>
 
             <div className="flex flex-col gap-1">
               <h2 className="font-poppins text-2xl font-semibold">
-                Master Your Digital Communication Skills
+                Master Your Test Skills
               </h2>
               <p className="text-[#000] text-sm">
-                Welcome to our digital communication practice section! Here, you
-                have the opportunity to refine your skills in effective online
-                communication. Whether you're aiming to polish your email
-                writing, perfect your messaging etiquette, or enhance your
-                social media communication, this platform offers the perfect
-                environment. Explore the intricacies of digital communication,
-                from crafting engaging emails to navigating online conversations
-                with finesse. Embrace the chance to become a proficient
-                communicator in the digital realm and start mastering your
-                digital communication skills today!
+              Ace your exams with our test preparation resources. Choose from a variety of categories and customize your practice sessions based on your individual needs and preferences. Whether you're studying for standardized tests or brushing up on specific subjects, our platform provides a comprehensive suite of practice questions and interactive tools to help you succeed. Boost your confidence, track your progress, and achieve your academic goals with our test preparation platform.
+
               </p>
             </div>
 

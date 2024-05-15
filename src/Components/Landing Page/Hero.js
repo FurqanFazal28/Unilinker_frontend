@@ -9,9 +9,9 @@ function Hero() {
             <div class="flex flex-col gap-4 w-[30%]">
               <div>
                 <h2 class="text-[#536780] font-bold text-[64px] max-w-[372px] font-Poppins">
-                  Building And Improving
+                A Platform for 
                   <span class="text-[#2D429B] font-bold text-[64px] font-Poppins">
-                    The Moxxy
+                    University Applicants
                   </span>
                 </h2>
               </div>

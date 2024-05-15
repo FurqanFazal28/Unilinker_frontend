@@ -5,6 +5,7 @@ import { Card, CardContent, CardMedia, CardHeader, List, ListItemButton, Typogra
 import { getFormatedTime } from '../helper';
 import { useNavigate } from 'react-router';
 import Grid from '@mui/material/Grid';
+import Header from './Landing Page/Header';
 
 export default function Quiz() {
     const [qns, setQns] = useState([]);
@@ -155,6 +156,8 @@ export default function Quiz() {
     }, []);
 
     return (
+        <>
+        <Header></Header>
         <div className='question-main'> 
             <Container maxWidth="lg">
                 <Typography variant="h3" align="center" gutterBottom className='page-title'>
@@ -232,13 +235,7 @@ export default function Quiz() {
                                 <Box>
                                     <LinearProgress variant="determinate" value={(qnIndex + 1) * 100 / questionCount} />
                                 </Box>
-                                {qns[qnIndex].imageName != null ? (
-                                    <CardMedia
-                                        component="img"
-                                        image={BASE_URL + 'Images/' + qns[qnIndex].imageName}
-                                        sx={{ width: 'auto', m: '10px auto' }}
-                                    />
-                                ) : null}
+                               
                                 <CardContent>
                                     <Typography variant="h6">
                                         {qns[qnIndex].qnInWords}
@@ -271,5 +268,6 @@ export default function Quiz() {
                 </Grid>
             </Container>
         </div>
+        </>
     );
 }

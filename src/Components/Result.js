@@ -7,7 +7,7 @@ import { createAPIEndpoint, ENDPOINTS } from '../api';
 import { getFormatedTime } from '../helper';
 import useStateContext from '../Hooks/UseStateContext';
 import { useNavigate } from 'react-router';
-
+import Header from './Landing Page/Header';
 export default function Result() {
     const { context, setContext } = useStateContext();
     const [score, setScore] = useState(0);
@@ -78,6 +78,8 @@ export default function Result() {
 
     return (
         <>
+        <Header></Header>
+
             <Card sx={{ mt: 5, display: 'flex', width: '100%', maxWidth: 640, mx: 'auto' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                     <CardContent sx={{ flex: '1 0 auto', textAlign: 'center' }}>
