@@ -5,36 +5,36 @@ import { Link } from "react-router-dom";
 function UniList() {
   const university = [
     {
-      name: "Bahria Uni",
-      designation: "Bahria Town",
+      name: "Bahria University",
+      designation: "Bahria Lahore",
       address: "Bahria Town",
-      image: "./images/png/unii.png",
+      image: "./images/png/bahria.png",
     },
     {
-      name: "Comsats Uni",
+      name: "Comsats University",
       designation: "Comsats Lahore",
       address: "Rawaind Road",
-      image: "./images/png/unii.png",
+      image: "./images/png/coms.png",
     },
     {
-      name: "FAST Uni",
+      name: "FAST University",
       designation: "Fast Lahore",
       address: "Faysal Town",
-      image: "./images/png/unii.png",
+      image: "./images/png/fast.png",
     },
     {
-      name: "LUMS Uni",
-      designation: "Defence LAhore",
+      name: "LUMS University",
+      designation: "Defence Lahore",
       address: "DHA",
-      image: "./images/png/unii.png",
+      image: "./images/png/lums.png",
     },
     // Add other universities here
   ];
 
   return (
     <div className="w-full max-w-[1920px] mx-auto bg-white">
-      <div className="flex flex-col p-[4.5rem] 2xl:gap-[115px] xl:gap-[83px]">
-        <div className="flex flex-col">
+      <div className="flex flex-col  2xl:gap-[115px] xl:gap-[83px]">
+        <div className="flex flex-col justify-center items-center">
           <h2 className="text-[#3579F8] font-poppins font-medium text-[30px]">
             Top Universities
           </h2>
@@ -52,7 +52,7 @@ function UniList() {
               key={index}
               className="min-w-[336px] flex flex-col items-center"
             >
-              <div className="bg-[#7D92B5] border rounded-full 2xl:h-[278px] 2xl:w-[278px] lg:h-[250px] lg:w-[250px] items-center overflow-hidden flex justify-center">
+              <div className="bg-[#d2d3d5] border rounded-full 2xl:h-[278px] 2xl:w-[278px] lg:h-[250px] lg:w-[250px] items-center overflow-hidden flex justify-center">
                 <img src={uni.image} alt="" />
               </div>
               <div className="pb-[23px]">
@@ -69,14 +69,13 @@ function UniList() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div class="flex gap-2 mt-2 justify-center items-center">
-        <button class="font-Poppins bg-[#2D429B] h-[34px] rounded-lg font-medium">
-          <span class="text-white p-12">
-            <Link to="/unifilter">Univeristy List</Link>
-          </span>
-        </button>
+        <div class="flex gap-2 mt-2 justify-center items-center">
+          <button class="font-Poppins bg-[#2D429B] h-[36px] rounded-lg font-medium">
+            <span class="text-white p-12 text-[21px]">
+              <Link to="/unifilter">Univeristy List</Link>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );

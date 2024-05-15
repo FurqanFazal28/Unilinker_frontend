@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const BASE_URL = 'https://localhost:7206';
+export const BASE_URL = 'https://unilinkapiv1.azurewebsites.net';
 
 export const ENDPOINTS = {
     question:'question',

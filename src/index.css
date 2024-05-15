@@ -222,6 +222,65 @@ code {
   font-weight: 600;
   text-transform: capitalize;
 }
+/* question page */
+.question-main{
+  background-color: #1b1b1b;
+  /* height: 100vh; */
+}
+.question-main .page-title{
+  color: #ffffff;
+  padding: 30px 0;
+}
+.question-main .question-content{
+  color: #a3a3a3;
+  text-align: start;
+  font-size: 22px;
+}
+.question-main .question-list{
+  width: 100%;
+  display: flex;
+}
+.question-main .question-list label{
+  margin-right: 10px;
+  border: 1px solid #ffffff;
+  padding: 5px 9px;
+  border-radius: 5px; 
+  margin-bottom: 10px;
+}
+.question-main .question-list label span{
+  color: #ffffff;
+}
+.question-image{
+  width: 100%;
+  height: 100%;
+}
+.question-image img{
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+  border-radius: 12px;
+}
+.question-foot{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.question-foot .questionInput{
+  width: 200px;
+}
+.question-foot .questionInput label{
+  color: #ffffff;
+}
+.question-foot .questionInput input{
+  color: #ffffff;
+}
+.question-foot .questionInput .MuiOutlinedInput-notchedOutline{
+  border-color: #ffffff;
+}
+.question-foot button{
+  height: 54px;
+  padding: 6px 20px;
+}
 
 /* responsive */
 @media (max-width: 1024px) {

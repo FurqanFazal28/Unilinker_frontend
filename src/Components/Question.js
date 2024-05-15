@@ -4,6 +4,7 @@ import useStateContext from '../Hooks/UseStateContext';
 import { Card, CardContent, CardMedia, CardHeader, List, ListItemButton, Typography, Box, LinearProgress, FormControl, FormGroup, FormControlLabel, Checkbox, Button, TextField, Container } from '@mui/material';
 import { getFormatedTime } from '../helper';
 import { useNavigate } from 'react-router';
+import Grid from '@mui/material/Grid';
 
 export default function Quiz() {
     const [qns, setQns] = useState([]);
@@ -154,107 +155,121 @@ export default function Quiz() {
     }, []);
 
     return (
-        <Container maxWidth="md">
-            <Typography variant="h3" align="center" gutterBottom>
-                Test Preparation
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-                Choose any category to prepare for your test.
-            </Typography>
-            {!formSubmitted ? (
-                <form onSubmit={handleFormSubmit}>
-                    <FormControl sx={{ m: 2 }}>
-                        <FormGroup>
-                            <FormControlLabel
-                                control={<Checkbox
-                                    checked={categories.every(cat => cat.checked)}
-                                    onChange={() => {
-                                        const allChecked = categories.every(cat => cat.checked);
-                                        const updatedCategories = categories.map(cat => ({ ...cat, checked: !allChecked }));
-                                        setCategories(updatedCategories);
-                                    }}
-                                />}
-                                label="All"
-                            />
-                            {categories.map(cat => (
-                                categories.length > 0 && (
-                                    cat && (
-                                        <FormControlLabel
-                                            key={cat.id}
-                                            control={<Checkbox
-                                                checked={cat.checked || false}
-                                                onChange={() => handleCategoryChange(cat.id)}
-                                                disabled={categories.every(c => c && c.id !== cat.id && c.checked)}
-                                            />}
-                                            label={cat.name}
-                                        />
-                                    )
-                                )
-                            ))}
-                        </FormGroup>
-                    </FormControl>
-
-                    <FormControl sx={{ m: 2 }}>
-                        <TextField
-                            type="number"
-                            label="Number of Questions"
-                            value={questionCount}
-                            onChange={handleQuestionCountChange}
-                            inputProps={{ min: 1, max: 100 }}
-                        />
-                    </FormControl>
-                    <Button variant="contained" type="submit">Submit</Button>
-                </form>
-            ) : null}
-            {qns.length !== 0 ? (
-                <Card
-                    sx={{
-                        maxWidth: 640, mx: 'auto', mt: 5,
-                        '& .MuiCardHeader-action': { m: 0, alignSelf: 'center' }
-                    }}
-                >
-                    <CardHeader
-                        title={'Question ' + (qnIndex + 1) + ' of ' + questionCount}
-                        action={
-                            <>
-                                <Button variant="contained" onClick={handleBack} disabled={qnIndex === 0}>Back</Button>
-                                <Typography>{getFormatedTime(timeTaken)}</Typography>
-                            </>
-                        }
-                    />
-                    <Box>
-                        <LinearProgress variant="determinate" value={(qnIndex + 1) * 100 / questionCount} />
-                    </Box>
-                    {qns[qnIndex].imageName != null ? (
-                        <CardMedia
-                            component="img"
-                            image={BASE_URL + 'Images/' + qns[qnIndex].imageName}
-                            sx={{ width: 'auto', m: '10px auto' }}
-                        />
-                    ) : null}
-                    <CardContent>
-                        <Typography variant="h6">
-                            {qns[qnIndex].qnInWords}
+        <div className='question-main'> 
+            <Container maxWidth="lg">
+                <Typography variant="h3" align="center" gutterBottom className='page-title'>
+                    Test Preparation
+                </Typography>
+                <Grid container spacing={4}>
+                    <Grid item md={6}>
+                        <Typography variant="body1" gutterBottom className='question-content'>
+                            Choose any category to prepare for your test.
                         </Typography>
-                        <List>
-                            {qns[qnIndex].options && qns[qnIndex].options.map((item, idx) => (
-                                <ListItemButton
-                                    key={idx}
-                                    disableRipple
-                                    onClick={() => updateAnswer(qns[qnIndex].qnId, idx)}
-                                    sx={{
-                                        backgroundColor: context.selectedOptions.find(option => option.qnId === qns[qnIndex].qnId && option.selected === idx) ? '#3399FF' : 'transparent'
-                                    }}
-                                >
-                                    <div>
-                                        <b>{String.fromCharCode(65 + idx) + " . "}</b>{item}
-                                    </div>
-                                </ListItemButton>
-                            ))}
-                        </List>
-                    </CardContent>
-                </Card>
-            ) : null}
-        </Container>
+                        {!formSubmitted ? (
+                            <form onSubmit={handleFormSubmit}>
+                                <FormControl sx={{ m: 2 }} className='question-list'>
+                                    <FormGroup>
+                                        <FormControlLabel
+                                            control={<Checkbox
+                                                checked={categories.every(cat => cat.checked)}
+                                                onChange={() => {
+                                                    const allChecked = categories.every(cat => cat.checked);
+                                                    const updatedCategories = categories.map(cat => ({ ...cat, checked: !allChecked }));
+                                                    setCategories(updatedCategories);
+                                                }}
+                                            />}
+                                            label="All"
+                                        />
+                                        {categories.map(cat => (
+                                            categories.length > 0 && (
+                                                cat && (
+                                                    <FormControlLabel
+                                                        key={cat.id}
+                                                        control={<Checkbox
+                                                            checked={cat.checked || false}
+                                                            onChange={() => handleCategoryChange(cat.id)}
+                                                            disabled={categories.every(c => c && c.id !== cat.id && c.checked)}
+                                                        />}
+                                                        label={cat.name}
+                                                    />
+                                                )
+                                            )
+                                        ))}
+                                    </FormGroup>
+                                </FormControl>
+
+                                <div className='question-foot'>
+                                    <FormControl sx={{ m: 2 }}>
+                                        <TextField
+                                            type="number"
+                                            label="Number of Questions"
+                                            value={questionCount}
+                                            onChange={handleQuestionCountChange}
+                                            inputProps={{ min: 1, max: 100 }}
+                                            className='questionInput'
+                                        />
+                                    </FormControl>
+                                    <Button variant="contained" type="submit">Submit</Button>
+                                </div>
+                            </form>
+                        ) : null}
+                        {qns.length !== 0 ? (
+                            <Card
+                                sx={{
+                                    maxWidth: 640, mx: 'auto', mt: 5,
+                                    '& .MuiCardHeader-action': { m: 0, alignSelf: 'center' }
+                                }}
+                            >
+                                <CardHeader
+                                    title={'Question ' + (qnIndex + 1) + ' of ' + questionCount}
+                                    action={
+                                        <>
+                                            <Button variant="contained" onClick={handleBack} disabled={qnIndex === 0}>Back</Button>
+                                            <Typography>{getFormatedTime(timeTaken)}</Typography>
+                                        </>
+                                    }
+                                />
+                                <Box>
+                                    <LinearProgress variant="determinate" value={(qnIndex + 1) * 100 / questionCount} />
+                                </Box>
+                                {qns[qnIndex].imageName != null ? (
+                                    <CardMedia
+                                        component="img"
+                                        image={BASE_URL + 'Images/' + qns[qnIndex].imageName}
+                                        sx={{ width: 'auto', m: '10px auto' }}
+                                    />
+                                ) : null}
+                                <CardContent>
+                                    <Typography variant="h6">
+                                        {qns[qnIndex].qnInWords}
+                                    </Typography>
+                                    <List>
+                                        {qns[qnIndex].options && qns[qnIndex].options.map((item, idx) => (
+                                            <ListItemButton
+                                                key={idx}
+                                                disableRipple
+                                                onClick={() => updateAnswer(qns[qnIndex].qnId, idx)}
+                                                sx={{
+                                                    backgroundColor: context.selectedOptions.find(option => option.qnId === qns[qnIndex].qnId && option.selected === idx) ? '#3399FF' : 'transparent'
+                                                }}
+                                            >
+                                                <div>
+                                                    <b>{String.fromCharCode(65 + idx) + " . "}</b>{item}
+                                                </div>
+                                            </ListItemButton>
+                                        ))}
+                                    </List>
+                                </CardContent>
+                            </Card>
+                        ) : null}
+                    </Grid >
+                    <Grid item md={6}>
+                        <div className='question-image'>
+                            <img src='/images/png/test-preparation2.webp' />
+                        </div>
+                    </Grid>
+                </Grid>
+            </Container>
+        </div>
     );
 }
