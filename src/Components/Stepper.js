@@ -126,20 +126,26 @@ const VerticalLinearStepper = () => {
                 setShowResponse(true);
                 return;
             }
+  
+             const fullResponse = `${formattedAnswers}, The above survey I have conducted based on this data provide name of 3 fields I have to choose in my career`;
     
-            const fullResponse = `Give the name of only 3 fields I have to choose for the graduation based on the data I have provided\n${formattedAnswers}`;
-    
-            const response = await fetch(POST_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ answers: fullResponse })
-            });
-    
+            const encodedData = encodeURIComponent( fullResponse );
+
+// Construct the URL with the encoded data
+const urlWithParams = `${POST_URL}?query=${fullResponse}`;
+
+// Make the GET request
+const response = await fetch(urlWithParams, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'text/plain'
+    }
+});
+
             if (response.ok) {
-                const responseData = await response.json();
-                setResponseText(responseData); // Assuming the response data is a string
+                
+                const responseData = await response.text();
+                setResponseText(responseData); // Assuming the response data is a strin
                 setShowResponse(true);
                 setErrorText(''); // Clear any previous error message
             } else {
