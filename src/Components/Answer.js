@@ -38,13 +38,7 @@ export default function Answer({ qnAnswers }) {
                             </Typography>
                         </AccordionSummary>
                         <AccordionDetails sx={{ backgroundColor: grey[900] }}>
-                            {item.imageName && (
-                                <CardMedia
-                                    component="img"
-                                    image={BASE_URL + 'Images/' + item.imageName}
-                                    sx={{ m: '10px auto', width: 'auto' }}
-                                />
-                            )}
+                            
                             <List>
                                 {item.options.map((x, i) => (
                                     <ListItem key={i}>
