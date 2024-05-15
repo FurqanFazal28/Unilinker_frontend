@@ -39,7 +39,7 @@ const Footer = () => {
 
         <div className="flex justify-between">
           <div className="2xl:max-w-[509px] xl:max-w-[387px]">
-            <h2 className="title-font-lg">Explore Universities Worldwide</h2>
+            <h2 className="title-font-lg">Explore Universities!</h2>
           </div>
 
           <div className="flex gap-[10px]">

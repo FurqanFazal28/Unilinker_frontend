@@ -19,22 +19,8 @@ function DiscussionForum() {
 
             <div class="flex flex-col gap-[51px]">
               <p className="text-[#061C3D] font-Poppins max-w-[777px] text-left text-[20px] font-medium">
-                Welcome to our vibrant and diverse discussion forum, where
-                knowledge meets community! Our forum is a bustling hub of
-                activity, buzzing with passionate individuals eager to share
-                insights, ask questions, and engage in meaningful conversations.
-                Whether you're a seasoned expert in your field or a curious
-                newcomer seeking guidance, you'll find a welcoming space here to
-                explore, learn, and connect. Dive into our myriad of topics
-                ranging from health and wellness to technology, arts, and
-                beyond. Participate in lively debates, exchange valuable
-                information, and forge connections with fellow enthusiasts from
-                around the globe. Our forum is not just a platform for
-                discussion; it's a vibrant community where ideas flourish, bonds
-                are formed, and perspectives are broadened. Join us on this
-                exciting journey of discovery, growth, and camaraderie.
-                Together, let's embark on a quest for knowledge, enlightenment,
-                and meaningful connections. Welcome aboard!
+              Join our vibrant discussion forum and connect with peers, educators, and experts from around the world. Share insights, ask questions, and engage in meaningful conversations on a wide range of topics, from academic pursuits to career advice. Our community-driven platform fosters collaboration, knowledge-sharing, and support, creating a dynamic environment for learning and growth.
+
               </p>
 
               <div class="flex gap-2 mt-2">
